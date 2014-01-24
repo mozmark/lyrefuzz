@@ -1,0 +1,21 @@
+<!-- 001: The simplest possible case; input is directly executed -->
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<html>
+<head><title></title></head>
+<body>
+<p>
+<input id="input1" value="">
+<button id="btn1">click</button>
+</p>
+</body>
+<script>
+window.addEventListener('load', function () {
+    document.querySelector('#btn1').addEventListener('click', function () {
+      console.log('woo');
+      var entered = document.querySelector('#input1').value;
+      eval(entered);
+      }, true);
+    }, true);
+</script>
+</html
