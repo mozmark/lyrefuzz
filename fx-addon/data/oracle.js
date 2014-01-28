@@ -37,7 +37,7 @@ function initializeOracle(session_id, listener_base) {
 
   // TODO: we probably don't want the oracle identifier to be static.
   // Initially let's go for a short-ish string that's unlikely to collide
-  Object.prototype.__defineGetter__('QxZ', function() {
+  Object.prototype.__defineGetter__('_xss', function() {
     accessorPing(session);
     return function(arg) {
       invocationPing(session, arg);
