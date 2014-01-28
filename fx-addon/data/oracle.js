@@ -14,7 +14,7 @@ function initializeOracle(session_id, listener_base) {
     // to webdriver sessions
   }
   if(! listener_base) {
-    listener_base = 'http://localhost:3333';
+    listener_base = 'http://localhost:8081';
   }
 
   function doPing(url) {
