@@ -1,0 +1,6 @@
+eval(source()); // direct eval
+eval("document.title='"+source()+"';"); // escape from '
+eval("document.title=\""+source()+"\";"); // escape from "
+document.querySelector('#output1').innerHTML = source(); // direct innerHTML
+document.querySelector('#output1').innerHTML = "New form element: <input id='input2' value='"+source()+"'>"; // innerHTML ' attr
+document.querySelector('#output1').innerHTML = "New form element: <input id=\"input2\" value=\""+source()+"\">"; // innerHTML " attr

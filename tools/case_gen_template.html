@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+${description}
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<title>${title}</title>
+</head>
+<body>
+<form name="form1" id="form1" action="">
+<input name="input1" id="input1" value="">
+<button name="btn1" id="btn1">click</button>
+<div name="output1" id="output1"></div>
+</form>
+
+<script>
+function unfiltered() {
+  return ${source}
+}
+
+function clean(input) {
+  return ${filter}
+}
+
+function source() {
+  return clean(unfiltered());
+}
+
+function sink() {
+  ${sink}
+}
+
+function findElement(name) {
+  if('document' == name) {
+    return document;
+  }
+
+  if('window' == name) {
+    return window;
+  }
+
+  return document.querySelector('#'+name);
+}
+
+function hookEvent(nodeName, eventName) {
+  node = findElement(nodeName);
+  node.addEventListener(eventName, sink(), true);
+}
+
+window.addEventListener('load', function () {
+      ${event_hook}
+    }, true);
+</script>
+</body>
+</html>

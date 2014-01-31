@@ -1,0 +1,4 @@
+input; // no filtering
+/[<>]/g.exec(input) ? '' : input; // return blank if blacklisted item present
+/[<>']/g.exec(input) ? '' : input; // return blank if blacklisted item present
+/[<>'"]/g.exec(input) ? '' : input; // return blank if blacklisted item present
